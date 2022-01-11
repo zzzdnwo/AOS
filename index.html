@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        $( document ).ready( function() {
+          AOS.init();
+
+          AOS.init({
+              delay: 500,
+              duration: 1000,
+          })
+          $( window ).resize(function(){
+            function AOS_MOBILE() {
+                if (matchMedia("screen and (max-width: 768px)").matches) {
+                    alert('`');
+                    $('.txtBox').attr('data-aos', 'fade-down');
+
+                }
+            } // 768px 이하일 때 txtBox 의 애니메이션 효과를 fade-down 으로 바꾼다.
+            
+            AOS_MOBILE();
+          });
+        } );
+    </script>
+    <style>
+        body{ font-family: Consolas, monospace; }
+        section{width: 100%; height: 100vh; border: 1px solid #000; box-sizing: border-box; display: flex; justify-content: center; align-items: center; }
+        .txtBox{width: 510px;height: 300px; text-align: center; font-family: 20px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="section1">
+            <div class="txtBox" data-aos="fade-up" data-aos-mirror="true" data-aos-once="true">
+                <p>Scroll Animation TEST <br/> GSAP 'AOS' WOW</p>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="txtBox" data-aos="fade-down" data-aos-offset="-100">
+                <p>Scroll Animation TEST <br/> GSAP 'AOS' WOW</p>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="txtBox" data-aos="fade-left">
+                <p>Scroll Animation TEST <br/> GSAP 'AOS' WOW</p>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="txtBox" data-aos="fade-right-in">
+                <p>Scroll Animation TEST <br/> GSAP 'AOS' WOW</p>
+            </div>
+        </section>
+        <section class="section5">
+            <div class="txtBox" data-aos="flip-down">
+                <p>Scroll Animation TEST <br/> GSAP 'AOS' WOW</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(function(){
+
+        });
+    </script>
+    <!---->
+</body>
+</html>
